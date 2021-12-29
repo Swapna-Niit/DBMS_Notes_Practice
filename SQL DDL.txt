@@ -1,0 +1,229 @@
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 8.0.23 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> create database moritech;
+Query OK, 1 row affected (0.27 sec)
+
+mysql> show databases;
++---------------------+
+| Database            |
++---------------------+
+| bfs_hibdemo         |
+| bfs_jdbcdemo        |
+| binge               |
+| canteen             |
+| cgi                 |
+| classboxes          |
+| classicmodels       |
+| cms                 |
+| cmsdemo             |
+| cmshib              |
+| coursemanagement    |
+| demo                |
+| expensetracker      |
+| hexawaredigital     |
+| hibinheritance      |
+| information_schema  |
+| jdbcdemo            |
+| jdbctemplateexample |
+| jdbiexample         |
+| joins               |
+| learntek            |
+| lims                |
+| lmsdemo             |
+| meanexample         |
+| mlp173              |
+| mlp191              |
+| mlp312              |
+| moritech            |
+| mysql               |
+| mysql_training      |
+| onlineecomapp       |
+| performance_schema  |
+| practice            |
+| profile_management  |
+| quinoxx             |
+| restassured         |
+| restsample          |
+| sakila              |
+| shoppingweb         |
+| springbootreactapp  |
+| springbootsecurity  |
+| sys                 |
+| testdb              |
+| torris              |
+| tutorialdemo        |
+| usermanagement      |
+| world               |
++---------------------+
+47 rows in set (1.27 sec)
+
+mysql> use moritech;
+Database changed
+mysql> create table student(studentid varchar(20),studentname varchar(100),studentemail varchar(30),
+    -> studentage int);
+Query OK, 0 rows affected (2.21 sec)
+
+mysql> desc student;
++--------------+--------------+------+-----+---------+-------+
+| Field        | Type         | Null | Key | Default | Extra |
++--------------+--------------+------+-----+---------+-------+
+| studentid    | varchar(20)  | YES  |     | NULL    |       |
+| studentname  | varchar(100) | YES  |     | NULL    |       |
+| studentemail | varchar(30)  | YES  |     | NULL    |       |
+| studentage   | int          | YES  |     | NULL    |       |
++--------------+--------------+------+-----+---------+-------+
+4 rows in set (0.23 sec)
+
+mysql> alter table student add studentdob date;
+Query OK, 0 rows affected (2.24 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc student;
++--------------+--------------+------+-----+---------+-------+
+| Field        | Type         | Null | Key | Default | Extra |
++--------------+--------------+------+-----+---------+-------+
+| studentid    | varchar(20)  | YES  |     | NULL    |       |
+| studentname  | varchar(100) | YES  |     | NULL    |       |
+| studentemail | varchar(30)  | YES  |     | NULL    |       |
+| studentage   | int          | YES  |     | NULL    |       |
+| studentdob   | date         | YES  |     | NULL    |       |
++--------------+--------------+------+-----+---------+-------+
+5 rows in set (0.42 sec)
+
+mysql> drop table student;
+Query OK, 0 rows affected (1.84 sec)
+
+mysql> desc student;
+ERROR 1146 (42S02): Table 'moritech.student' doesn't exist
+mysql> create table student(studentid varchar(20),studentname varchar(100),studentemail varchar(30),
+    -> studentage int);
+Query OK, 0 rows affected (1.64 sec)
+
+mysql> alter table student add studentdob date;
+Query OK, 0 rows affected (1.71 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc student;
++--------------+--------------+------+-----+---------+-------+
+| Field        | Type         | Null | Key | Default | Extra |
++--------------+--------------+------+-----+---------+-------+
+| studentid    | varchar(20)  | YES  |     | NULL    |       |
+| studentname  | varchar(100) | YES  |     | NULL    |       |
+| studentemail | varchar(30)  | YES  |     | NULL    |       |
+| studentage   | int          | YES  |     | NULL    |       |
+| studentdob   | date         | YES  |     | NULL    |       |
++--------------+--------------+------+-----+---------+-------+
+5 rows in set (0.07 sec)
+
+mysql> alter table student add studentjd datetime;
+Query OK, 0 rows affected (0.50 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc student;
++--------------+--------------+------+-----+---------+-------+
+| Field        | Type         | Null | Key | Default | Extra |
++--------------+--------------+------+-----+---------+-------+
+| studentid    | varchar(20)  | YES  |     | NULL    |       |
+| studentname  | varchar(100) | YES  |     | NULL    |       |
+| studentemail | varchar(30)  | YES  |     | NULL    |       |
+| studentage   | int          | YES  |     | NULL    |       |
+| studentdob   | date         | YES  |     | NULL    |       |
+| studentjd    | datetime     | YES  |     | NULL    |       |
++--------------+--------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+
+mysql> alter table student add studentmarks float;
+Query OK, 0 rows affected (0.49 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc student;
++--------------+--------------+------+-----+---------+-------+
+| Field        | Type         | Null | Key | Default | Extra |
++--------------+--------------+------+-----+---------+-------+
+| studentid    | varchar(20)  | YES  |     | NULL    |       |
+| studentname  | varchar(100) | YES  |     | NULL    |       |
+| studentemail | varchar(30)  | YES  |     | NULL    |       |
+| studentage   | int          | YES  |     | NULL    |       |
+| studentdob   | date         | YES  |     | NULL    |       |
+| studentjd    | datetime     | YES  |     | NULL    |       |
+| studentmarks | float        | YES  |     | NULL    |       |
++--------------+--------------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
+
+mysql> alter table student drop studentmarks;
+Query OK, 0 rows affected (2.34 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc student;
++--------------+--------------+------+-----+---------+-------+
+| Field        | Type         | Null | Key | Default | Extra |
++--------------+--------------+------+-----+---------+-------+
+| studentid    | varchar(20)  | YES  |     | NULL    |       |
+| studentname  | varchar(100) | YES  |     | NULL    |       |
+| studentemail | varchar(30)  | YES  |     | NULL    |       |
+| studentage   | int          | YES  |     | NULL    |       |
+| studentdob   | date         | YES  |     | NULL    |       |
+| studentjd    | datetime     | YES  |     | NULL    |       |
++--------------+--------------+------+-----+---------+-------+
+6 rows in set (0.09 sec)
+
+mysql> alter table student add studentmarks float, add studentgrade char(3);
+Query OK, 0 rows affected (1.95 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc student;
++--------------+--------------+------+-----+---------+-------+
+| Field        | Type         | Null | Key | Default | Extra |
++--------------+--------------+------+-----+---------+-------+
+| studentid    | varchar(20)  | YES  |     | NULL    |       |
+| studentname  | varchar(100) | YES  |     | NULL    |       |
+| studentemail | varchar(30)  | YES  |     | NULL    |       |
+| studentage   | int          | YES  |     | NULL    |       |
+| studentdob   | date         | YES  |     | NULL    |       |
+| studentjd    | datetime     | YES  |     | NULL    |       |
+| studentmarks | float        | YES  |     | NULL    |       |
+| studentgrade | char(3)      | YES  |     | NULL    |       |
++--------------+--------------+------+-----+---------+-------+
+8 rows in set (2.41 sec)
+
+mysql> alter table student add studentpercentage float after studentmarks float;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'float' at line 1
+mysql> alter table student add studentpercentage float after studentmarks;
+ERROR 1060 (42S21): Duplicate column name 'studentpercentage'
+mysql> alter table student add studentnationality varchar first studentage;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'first studentage' at line 1
+mysql> alter table student add studentnationality varchar(30) first studentage;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'studentage' at line 1
+mysql> alter table student add studentnationality varchar(30) first;
+Query OK, 0 rows affected (2.27 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc student;
++--------------------+--------------+------+-----+---------+-------+
+| Field              | Type         | Null | Key | Default | Extra |
++--------------------+--------------+------+-----+---------+-------+
+| studentnationality | varchar(30)  | YES  |     | NULL    |       |
+| studentid          | varchar(20)  | YES  |     | NULL    |       |
+| studentname        | varchar(100) | YES  |     | NULL    |       |
+| studentemail       | varchar(30)  | YES  |     | NULL    |       |
+| studentage         | int          | YES  |     | NULL    |       |
+| studentdob         | date         | YES  |     | NULL    |       |
+| studentjd          | datetime     | YES  |     | NULL    |       |
+| studentmarks       | float        | YES  |     | NULL    |       |
+| studentpercentage  | float        | YES  |     | NULL    |       |
+| studentgrade       | char(3)      | YES  |     | NULL    |       |
++--------------------+--------------+------+-----+---------+-------+
+10 rows in set (2.00 sec)
+
+mysql>
