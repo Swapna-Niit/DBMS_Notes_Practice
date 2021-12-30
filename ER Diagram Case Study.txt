@@ -1,0 +1,23 @@
+Online Admission System is an application, which develops a user interface for colleges or universities, which offer admission to various courses.
+-It provides provision for students to apply for a course and get admission. 
+-Administrator can add/modify the course, approve / reject the students’ applications, view applications, view course, view the details of courses taken by students and search by course.
+
+User -   Administrator
+•	Admin will login to the  online admission system
+•	Admin can see all the detail in brief.
+•	Admin can view user detail and update user detail.
+•	Admin can view all application. Admin can view application and documents on the basis of status (pending application, approve an application and reject application).
+•	Admin also can approve pending application.
+•	Admin can search application based on user name, email id, and contact number.
+•	Admin can manage courses (add and update).
+•	Admin can view payment details.
+
+User- Student
+•	Student can see the status of his application.
+•	Student can fill the admission application form.
+•	Student can check his / her application form is selected or rejected (which is done by admin).
+•	Student can upload his or her own document if his/ her form is accepted by admin.
+•	Students cannot upload their own document if his/ her form is rejected by admin.
+•	Student user can also update his/ her profile, change the password.
+•	Student can make payment for the course.
+
